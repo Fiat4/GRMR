@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Воспоминания бабушки ❤️</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 22px;
+            background: linear-gradient(135deg, #000000 0%, #00001e 100%);
+            color: #fff;
+            padding: 15px;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 28px;
+            text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.5);
+        }
+
+        .swiper {
+            width: 100%;
+            height: 82vh;
+            position: relative;
+            touch-action: pan-y pinch-zoom;
+            /* Только вертикальный скролл + зум */
+        }
+
+        .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 30, 0.3);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .swiper-slide img {
+            max-width: 90vw;
+            max-height: 90vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            object-position: center;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.1);
+            transition: transform 0.4s ease;
+        }
+
+        .swiper-slide img:hover,
+        .swiper-slide img:active {
+            transform: scale(1.02);
+        }
+
+        /* КРУПНЫЕ кнопки навигации (только для ПК/планшетов) */
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            margin-top: -40px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* ТОЧКИ-пагинация крупные */
+        .swiper-pagination {
+            bottom: 20px;
+        }
+
+        .swiper-pagination-bullet {
+            width: 18px;
+            height: 18px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0.8;
+            margin: 0 8px;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #fff;
+            opacity: 1;
+            transform: scale(1.2);
+        }
+
+        /* TAP-зоны для мобильных (невидимые) */
+        .tap-left,
+        .tap-right {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 33%;
+            z-index: 10;
+            cursor: pointer;
+            display: none;
+        }
+
+        .tap-left {
+            left: 0;
+        }
+
+        .tap-right {
+            right: 0;
+        }
+
+        .tap-left::after {
+            content: '← Назад';
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 16px;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .tap-right::after {
+            content: 'Вперёд →';
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 16px;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        /* МОБИЛЬНЫЙ АДАПТИВ - БЕЗ СТРЕЛОК */
+        @media (max-width: 768px) {
+            body {
+                font-size: 24px;
+                padding: 10px;
+            }
+
+            .title {
+                font-size: 34px;
+                margin-bottom: 20px;
+            }
+
+            .swiper {
+                height: 84vh;
+            }
+
+            .swiper-slide img {
+                max-width: 92vw;
+                max-height: 92vh;
+            }
+
+            /* СКРЫВАЕМ СТРЕЛКИ НА МОБИЛЬНЫХ */
+            .swiper-button-next,
+            .swiper-button-prev {
+                display: none !important;
+            }
+        }
+
+        /* ПЛАНШЕТЫ - стрелки остаются */
+        @media (min-width: 769px) and (max-width: 1024px) {
+
+            .swiper-button-next,
+            .swiper-button-prev {
+                width: 70px;
+                height: 70px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .swiper-button-next:after,
+            .swiper-button-prev:after {
+                font-size: 20px;
+            }
+
+            .tap-left,
+            .tap-right {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="title">Дорогие воспоминания бабушки ❤️</h1>
+    <div class="swiper fadeSwiper">
+        <!-- TAP-зоны для мобильных -->
+        <div class="tap-left"></div>
+        <div class="tap-right"></div>
+
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="/Grandmother/Foto_gif/Gif/gif_1.gif" alt="Воспоминание 1">
+            </div>
+            <div class="swiper-slide">
+                <img src="/Grandmother/Foto_gif/Gif/gif_2.gif" alt="Воспоминание 2">
+            </div>
+            <div class="swiper-slide">
+                <img src="/Grandmother/Foto_gif/Gif/gif_3.gif" alt="Воспоминание 3">
+            </div>
+            <div class="swiper-slide">
+                <img src="/Grandmother/Foto_gif/Gif/gif_4.gif" alt="Воспоминание 4">
+            </div>
+            <div class="swiper-slide">
+                <img src="/Grandmother/Foto_gif/Gif/gif_5.gif" alt="Воспоминание 4">
+            </div>
+            <div class="swiper-slide">
+                <img src="/Grandmother/Foto_gif/Gif/gif_6.gif" alt="Воспоминание 4">
+            </div>
+            <div class="swiper-slide">
+                <img src="/Grandmother/Foto_gif/Gif/gif_7.gif" alt="Воспоминание 4">
+            </div>
+            <div class="swiper-slide">
+                <img src="/Grandmother/Foto_gif/Gif/gif_8.gif" alt="Воспоминание 4">
+            </div>
+            <div class="swiper-slide">
+                <img src="/Grandmother/Foto_gif/Gif/gif_9.gif" alt="Воспоминание 4">
+            </div>
+            <div class="swiper-slide">
+                <img src="/Grandmother/Foto_gif/Gif/gif_10.gif" alt="Воспоминание 4">
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.fadeSwiper', {
+            effect: 'fade',
+            fadeEffect: { crossFade: true },
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            speed: 1200,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            grabCursor: true,
+            // Зум двойным тапом
+            on: {
+                doubleTap: function () {
+                    const img = this.slides[this.activeIndex].querySelector('img');
+                    if (img.style.transform === 'scale(2)') {
+                        img.style.transform = 'scale(1)';
+                    } else {
+                        img.style.transform = 'scale(2)';
+                    }
+                }
+            }
+        });
+
+        // TAP-зоны для мобильных устройств
+        document.querySelector('.tap-left').addEventListener('click', () => {
+            swiper.slidePrev();
+        });
+        document.querySelector('.tap-right').addEventListener('click', () => {
+            swiper.slideNext();
+        });
+    </script>
+</body>
+
+</html>
