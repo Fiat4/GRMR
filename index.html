@@ -35,7 +35,7 @@
             height: 82vh;
             position: relative;
             touch-action: pan-y pinch-zoom;
-            /* Только вертикальный скролл + зум */
+
         }
 
         .swiper-slide {
@@ -64,7 +64,7 @@
             transform: scale(1.02);
         }
 
-        /* КРУПНЫЕ кнопки навигации (только для ПК/планшетов) */
+
         .swiper-button-next,
         .swiper-button-prev {
             color: #fff;
@@ -84,7 +84,7 @@
             font-weight: bold;
         }
 
-        /* ТОЧКИ-пагинация крупные */
+
         .swiper-pagination {
             bottom: 20px;
         }
@@ -103,7 +103,6 @@
             transform: scale(1.2);
         }
 
-        /* TAP-зоны для мобильных (невидимые) */
         .tap-left,
         .tap-right {
             position: absolute;
@@ -145,7 +144,6 @@
             pointer-events: none;
         }
 
-        /* МОБИЛЬНЫЙ АДАПТИВ - БЕЗ СТРЕЛОК */
         @media (max-width: 768px) {
             body {
                 font-size: 24px;
@@ -166,14 +164,12 @@
                 max-height: 92vh;
             }
 
-            /* СКРЫВАЕМ СТРЕЛКИ НА МОБИЛЬНЫХ */
             .swiper-button-next,
             .swiper-button-prev {
                 display: none !important;
             }
         }
 
-        /* ПЛАНШЕТЫ - стрелки остаются */
         @media (min-width: 769px) and (max-width: 1024px) {
 
             .swiper-button-next,
@@ -233,9 +229,7 @@
             <div class="swiper-slide">
                 <img src="gif_9.gif" alt="Воспоминание 4">
             </div>
-            <div class="swiper-slide">
-                <img src="gif_10.gif" alt="Воспоминание 4">
-            </div>
+
         </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
@@ -285,7 +279,4 @@
     </script>
 </body>
 
-
 </html>
-
-
